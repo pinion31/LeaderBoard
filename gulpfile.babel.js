@@ -30,7 +30,7 @@ gulp.task('default', ['sass','buildFiles', 'browserify']);
 gulp.task('sass', function () {
   return gulp.src('./sass/style.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('./css/style.css'));
+    .pipe(gulp.dest(''));
 });
 
 //js\\source\**\\*.js

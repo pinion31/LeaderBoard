@@ -22,6 +22,6 @@ _reactDom2.default.render(_react2.default.createElement(
     null,
     ' Leaderboard'
   ),
-  _react2.default.createElement(_Board2.default, { headings: ["Rank", "Camper Name", "Points in Past 30 days", "All Time Points"],
+  _react2.default.createElement(_Board2.default, { 'class': 'cells', headings: ["Rank", "Camper Name", "Points in Past 30 days", "All Time Points"],
     data: [[]] })
 ), document.getElementById("app"));

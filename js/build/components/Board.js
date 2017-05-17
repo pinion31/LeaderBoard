@@ -14,10 +14,6 @@ var _reactDom = require('react-dom');
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _BoardStore = require('./BoardStore');
-
-var _BoardStore2 = _interopRequireDefault(_BoardStore);
-
 var _jquery = require('jquery');
 
 var _jquery2 = _interopRequireDefault(_jquery);
@@ -43,59 +39,25 @@ var Board = function (_Component) {
       headings: _this.props.headings,
       data: _this.props.data,
       descending: true,
+      cells: _this.props.class,
       indices: ["rank", "username", "recent", "alltime"],
       getData: function () {
         _jquery2.default.ajax({ url: "https://fcctop100.herokuapp.com/api/fccusers/top/recent", cache: false,
           dataType: "json", success: function (newData) {
-            //console.log("returning data for " + newData);
-            //console.log("this is " + this.props);
-            //emitter.emit('change');
-            //return callback(data);
+
             this.setState({
               data: newData
             });
           }.bind(this)
         });
       }.bind(_this)()
-      //boardData:BoardStore.queryData(),
+
     };
-
-    //this.boardData = BoardStore.queryData();
-
-    /*
-    BoardStore.addListener('change', () => {
-      console.log("data is " + this.state.boardData);
-      this.setState({
-          data: this.state.boardData.getData(),
-      })
-    });*/
 
     return _this;
   }
 
-  /*
-  _getRows(rowInput) {
-      var n;
-      var arr = [];
-      for (n in rowInput) {
-        if (rowInput.hasOwnProperty(n)) {
-          arr.push(<td key={n}> {rowInput[n]} </td>);
-        }
-      }
-      return arr;
-  }*/
-
   _createClass(Board, [{
-    key: 'componentDidUpdate',
-    value: function componentDidUpdate() {
-      //console.log("data has been updated:" + this.state.data);
-    }
-  }, {
-    key: 'componentWillUpdate',
-    value: function componentWillUpdate() {
-      // console.log("updating with new info");
-    }
-  }, {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
@@ -104,7 +66,11 @@ var Board = function (_Component) {
         _react2.default.createElement(
           'caption',
           null,
-          this.state.displayName
+          _react2.default.createElement(
+            'h1',
+            null,
+            this.state.displayName
+          )
         ),
         _react2.default.createElement(
           'thead',
@@ -155,76 +121,9 @@ var Board = function (_Component) {
               )
             );
           })
-          /*
-          function() {
-           var newData = this.state.data;
-           var arr = [];
-           //console.log("data is " + newData);
-           //[{,,,},{,,,,}]
-           //row is an object ({,,,})
-             this.state.data.map(function(row, rowId){
-               return(
-               <tr key={rowId}>
-                <td key={rowId}>{row["username"]} </td>
-                {function() {console.log(row["username"]);}() }
-               </tr>
-             )
-           });
-           //return arr;
-          }.bind(this)()*/
-
-          /* arr.map(function(cell,cellId) {
-                      return (<td key={cellId}> {cell} </td>);
-                    })*/
-          /* {function() {
-                      for (var n in row) {
-                        if (row.hasOwnProperty(n)) {
-                          arr.push(row[n]);
-                          //console.log(arr);
-                          console.log(row[n]);
-                        }
-                      }
-                      console.log(arr);
-                      //return arr;
-                    }.bind(this)()*/
-
-          /*this.state.data.map(function(row, rowId){
-                console.log("row2 is " + this.state.data);
-                return (
-                  <tr key={rowId}>
-                    { function(row) {
-                        console.log("row is " + this.state.data);
-                        var n;
-                        var arr = [];
-                        for (n in row) {
-                          if (row.hasOwnProperty(n)) {
-                            arr.push(<td key={n}> {row[n]} </td>);
-                          }
-                        }
-                          for (var i in arr) {
-                           console.log(i);
-                        }
-                      //  return {arr};
-                      }()
-                    }
-                  </tr>)
-            })*/
-
         )
       );
     }
-
-    /*
-                      var n;
-                    var arr = [];
-                    for (n in row) {
-                        if (row.hasOwnProperty(n)) {
-                          return <td key={n}> {row[n]} </td>;
-                        }
-                      }*/
-    //  return arr;*/
-
-
   }, {
     key: '_sortData',
     value: function _sortData(e) {

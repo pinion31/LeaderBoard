@@ -12,6 +12,7 @@ class Board extends Component {
       headings:this.props.headings,
       data:this.props.data,
       descending:true,
+      cells:this.props.class,
       indices:["rank","username","recent","alltime"],
       getData: function() {
       $.ajax({url: "https://fcctop100.herokuapp.com/api/fccusers/top/recent", cache:false,
@@ -36,7 +37,7 @@ class Board extends Component {
    render() {
       return(
         <table>
-          <caption>{this.state.displayName}</caption>
+          <caption><h1>{this.state.displayName}</h1></caption>
           <thead onClick={this._sortData.bind(this)}>
             <tr>
               {this.state.headings.map(function(title, id) {
@@ -50,10 +51,10 @@ class Board extends Component {
                // console.log("rerendering");
                 return(
                   <tr key={rowId}>
-                   <td >{rowId+1} </td>
-                   <td >{row["username"]} </td>
-                   <td >{row["recent"]} </td>
-                   <td >{row["alltime"]} </td>
+                   <td>{rowId+1} </td>
+                   <td>{row["username"]} </td>
+                   <td>{row["recent"]} </td>
+                   <td>{row["alltime"]} </td>
                   </tr>
                 )
               })

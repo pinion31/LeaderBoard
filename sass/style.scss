@@ -1,3 +1,3 @@
-@import 'variables';
-@import 'page';
-@import  'table';
+@import './global/variables';
+@import './page/page';
+@import  './components/table';
