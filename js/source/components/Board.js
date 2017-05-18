@@ -11,7 +11,7 @@ class Board extends Component {
       displayName:"freeCodeCamp Leaderboard",
       headings:this.props.headings,
       data:this.props.data,
-      descending:true,
+      descending:false,
       cells:this.props.class,
       indices:["rank","username","recent","alltime"],
       getData: function() {
@@ -48,16 +48,17 @@ class Board extends Component {
           </thead>
         <tbody>
           {  this.state.data.map(function(row, rowId){
-               // console.log("rerendering");
+                var rowNumber = this.state.descending? 100-rowId:rowId+1;
+
                 return(
                   <tr key={rowId}>
-                   <td>{rowId+1} </td>
-                   <td>{row["username"]} </td>
+                   <td>{rowNumber} </td>
+                   <td><img id={"icon"} src = {row["img"]} /> <span id="name">{row["username"]}</span> </td>
                    <td>{row["recent"]} </td>
                    <td>{row["alltime"]} </td>
                   </tr>
                 )
-              })
+              }.bind(this))
           }
         </tbody>
 

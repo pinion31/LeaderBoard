@@ -38,7 +38,7 @@ var Board = function (_Component) {
       displayName: "freeCodeCamp Leaderboard",
       headings: _this.props.headings,
       data: _this.props.data,
-      descending: true,
+      descending: false,
       cells: _this.props.class,
       indices: ["rank", "username", "recent", "alltime"],
       getData: function () {
@@ -91,20 +91,27 @@ var Board = function (_Component) {
           'tbody',
           null,
           this.state.data.map(function (row, rowId) {
-            // console.log("rerendering");
+            var rowNumber = this.state.descending ? 100 - rowId : rowId + 1;
+
             return _react2.default.createElement(
               'tr',
               { key: rowId },
               _react2.default.createElement(
                 'td',
                 null,
-                rowId + 1,
+                rowNumber,
                 ' '
               ),
               _react2.default.createElement(
                 'td',
                 null,
-                row["username"],
+                _react2.default.createElement('img', { id: "icon", src: row["img"] }),
+                ' ',
+                _react2.default.createElement(
+                  'span',
+                  { id: 'name' },
+                  row["username"]
+                ),
                 ' '
               ),
               _react2.default.createElement(
@@ -120,7 +127,7 @@ var Board = function (_Component) {
                 ' '
               )
             );
-          })
+          }.bind(this))
         )
       );
     }
