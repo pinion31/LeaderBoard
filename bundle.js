@@ -176,9 +176,9 @@ _reactDom2.default.render(_react2.default.createElement(
   'div',
   null,
   _react2.default.createElement(
-    'h1',
-    null,
-    ' Leaderboard'
+    'div',
+    { id: "img-div" },
+    _react2.default.createElement('img', { id: "fccimage", src: "./images/freeCodeCamp.svg" })
   ),
   _react2.default.createElement(_Board2.default, { 'class': 'cells', headings: ["Rank", "Camper Name", "Points in Past 30 days", "All Time Points"],
     data: [[]] })

@@ -3,12 +3,34 @@ html {
   background-color: $background-color;
 }
 
-h1 {
-  margin: center;
-}
-
 body {
   display: flex;
   justify-content: center;
+  width:100%
 }
 
+p {
+  font-family: 'Lato', sans-serif;
+}
+
+
+#app {
+  width:100%;
+}
+
+h1 {
+  margin: 1% 40%;
+  font-family: 'Cambay', sans-serif;
+}
+
+#fccimage {
+  //margin: 0px 20px 0px 40px;
+  margin-left:20px;
+
+  padding: 15px 0px 10px 0px;
+}
+
+#img-div {
+  margin-bottom: 40px;
+  background-color: $caption-bg-color;
+}

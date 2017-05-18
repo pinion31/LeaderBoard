@@ -4,7 +4,10 @@ import Board from './components/Board';
 
 ReactDOM.render (
   <div>
-    <h1> Leaderboard</h1>
+  <div id={"img-div"}>
+    <img id={"fccimage"} src= {"./images/freeCodeCamp.svg"}></img>
+  </div>
+
   <Board class="cells" headings= {["Rank", "Camper Name","Points in Past 30 days","All Time Points"]}
   data={[[]]}/>
   </div>,

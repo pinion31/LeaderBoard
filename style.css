@@ -1,21 +1,36 @@
 html {
   background-color: gray; }
 
-h1 {
-  margin: center; }
-
 body {
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  width: 100%; }
+
+p {
+  font-family: 'Lato', sans-serif; }
+
+#app {
+  width: 100%; }
+
+h1 {
+  margin: 1% 40%;
+  font-family: 'Cambay', sans-serif; }
+
+#fccimage {
+  margin-left: 20px;
+  padding: 15px 0px 10px 0px; }
+
+#img-div {
+  margin-bottom: 40px;
+  background-color: green; }
 
 table {
   margin: auto;
-  width: 1000px;
+  width: 80%;
   border: 2px solid black;
   border-collapse: collapse; }
 
 caption {
-  border: 2px solid black;
   margin-bottom: 20px;
   background-color: green; }
   caption h1 {
@@ -28,7 +43,10 @@ th {
   background-color: #C1DEAD;
   color: black;
   border: 2px solid black;
-  border-collapse: collapse; }
+  border-collapse: collapse;
+  font-family: 'Lato', sans-serif; }
+  th:nth-child(3), th:last-child {
+    cursor: pointer; }
 
 td {
   padding: 10px;
@@ -36,6 +54,7 @@ td {
   text-align: center;
   border-collapse: collapse;
   border: 1px solid black;
+  font-family: 'Lato', sans-serif;
   /*
   &:nth-child(2n){
     background-color: $cellback-gray;
